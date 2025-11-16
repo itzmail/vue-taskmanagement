@@ -18,5 +18,32 @@ export default defineConfigWithVueTs(
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
+  {
+    name: 'app/custom-rules',
+    rules: {
+      // TypeScript unused variables
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_', // Ignore parameters starting with _
+          varsIgnorePattern: '^_', // Ignore variables starting with _
+          caughtErrorsIgnorePattern: '^_', // Ignore caught errors starting with _
+          destructuredArrayIgnorePattern: '^_', // Ignore destructured array items starting with _
+          ignoreRestSiblings: true, // Ignore rest siblings in object destructuring
+        },
+      ],
+
+      // JavaScript unused variables (fallback)
+      'no-unused-vars': 'off', // Turn off base rule as it can conflict with TypeScript rule
+
+      // Vue specific unused variables
+      'vue/no-unused-vars': [
+        'warn',
+        {
+          ignorePattern: '^_', // Ignore variables starting with _
+        },
+      ],
+    },
+  },
   skipFormatting,
 )
