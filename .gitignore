@@ -30,6 +30,9 @@ bun.lock
 
 .eslintcache
 
+.env
+.env.development
+
 # Cypress
 /cypress/videos/
 /cypress/screenshots/
