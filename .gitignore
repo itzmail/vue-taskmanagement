@@ -26,6 +26,8 @@ coverage
 
 *.tsbuildinfo
 
+bun.lock
+
 .eslintcache
 
 # Cypress
