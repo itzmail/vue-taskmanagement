@@ -86,28 +86,28 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="h-screen bg-gray-100 w-full max-w-screen">
+  <div class="min-h-screen bg-gray-100 w-full overflow-x-hidden">
     <TheNavbar @logout="handleLogout" />
 
-    <main class="container max-w-6xl p-4 mx-auto">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-3xl font-semibold text-gray-800">Your Tasks</h2>
+    <main class="container max-w-7xl px-4 py-6 mx-auto sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-gray-800">Your Tasks</h2>
 
         <button
           @click="openCreateModal"
-          class="px-4 py-2 font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+          class="px-4 py-2 text-sm sm:text-base font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 transition-colors whitespace-nowrap"
         >
           + Create New Task
         </button>
       </div>
 
-      <div v-if="isLoading" class="text-center text-gray-500">Loading tasks...</div>
+      <div v-if="isLoading" class="text-center text-gray-500 py-8">Loading tasks...</div>
 
-      <div v-else-if="errorMessage" class="p-4 text-center text-red-800 bg-red-100 rounded-md">
+      <div v-else-if="errorMessage" class="p-4 text-center text-red-800 bg-red-100 rounded-md mx-auto max-w-2xl">
         {{ errorMessage }}
       </div>
 
-      <div v-else class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div v-else class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <TaskCard
           v-for="task in tasks"
           :key="task.id"
@@ -117,7 +117,7 @@ onMounted(() => {
         />
 
         <div v-if="tasks.length === 0" class="col-span-full">
-          <p class="text-center text-gray-500">Anda belum memiliki task.</p>
+          <p class="text-center text-gray-500 py-8">Anda belum memiliki task.</p>
         </div>
       </div>
     </main>

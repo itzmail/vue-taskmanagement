@@ -65,8 +65,8 @@ const handleClose = () => {
 </script>
 
 <template>
-  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-    <div class="w-full max-w-xl p-6 bg-white rounded-lg shadow-xl text-slate-900">
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md sm:max-w-lg lg:max-w-xl p-4 sm:p-6 bg-white rounded-lg shadow-xl text-slate-900">
       <h3 class="mb-4 text-2xl font-semibold">
         {{ isEditMode() ? 'Edit Task' : 'Create New Task' }}
       </h3>

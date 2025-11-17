@@ -55,8 +55,8 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <div class="flex items-center justify-center min-h-screen w-screen bg-gray-100">
-    <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
+  <div class="min-h-screen w-full bg-gray-100 flex items-center justify-center p-4">
+    <div class="w-full max-w-md p-6 sm:p-8 space-y-6 bg-white rounded-lg shadow-md">
       <h1 class="text-3xl font-bold text-center text-gray-900">Task Management Login</h1>
 
       <form class="space-y-6" @submit.prevent="handleLogin">
