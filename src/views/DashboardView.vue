@@ -4,7 +4,6 @@ import { useAuthStore } from '@/stores/auth'
 import api from '@/api/api'
 import { type Task } from '@/types'
 import { isAxiosError } from 'axios'
-import router from '@/router'
 
 import TheNavbar from '@/components/TheNavbar.vue'
 import TaskFormModal from '@/components/TaskFormModal.vue'
